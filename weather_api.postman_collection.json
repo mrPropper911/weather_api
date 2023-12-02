@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "a0e1010d-ee9f-4c85-aae6-e25e851e8f44",
+		"name": "weather_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save location",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/location?name=Brest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"location"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Brest"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get weather by location name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/weather?location=Moscow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Moscow"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get average temp by location order by date ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/weather/avg?location=Moscow&from=2023-11-01&to=2023-12-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"weather",
+						"avg"
+					],
+					"query": [
+						{
+							"key": "location",
+							"value": "Moscow"
+						},
+						{
+							"key": "from",
+							"value": "2023-11-01"
+						},
+						{
+							"key": "to",
+							"value": "2023-12-01"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
