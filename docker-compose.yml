@@ -7,8 +7,7 @@ services:
     environment:
       POSTGRES_USER: ${WEATHER_DATABASE_USERNAME}
       POSTGRES_PASSWORD: ${WEATHER_DATABASE_PASSWORD}
-      POSTGRES_DB: postgres
-#      PGDATA: /data/postgres
+      POSTGRES_DB: ${WEATHER_DATABASE_NAME}
     volumes:
       - postgres:/data/postgres
     ports:

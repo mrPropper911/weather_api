@@ -9,7 +9,7 @@ Test assignment for internship.
  
  Two ways see all endpoint:
 
-- OpenApi(Swagger)- http://localhost:8080/swagger-ui-custom.html
+- OpenApi(Swagger)- http://localhost:8088/swagger-ui-custom.html
 - run [Postman json file](./weather_api.postman_collection.json) on postman
 
 ## 1. Setup Environment and System Variable
@@ -82,17 +82,27 @@ $ mvn clean -DWEATHER_OPENWEATHER_TOKEN=change_on_your_secret_token test
 #[INFO] ------------------------------------------------------------------------
 #[INFO] Total time:  34.752 s
 #[INFO] Finished at: 2023-12-02T13:08:44+03:00
-#[INFO] ------------------------------------------------------------------------
 #...
 ```
 Application has [two execution profile](../weather_api/demo/src/main/resources/application.yml):
 - **develop** (default) (For development and testing in the IDE)
 - **production** (Settings for building application to jar file)
 
-Build application for production:
-```shell
-$ mvn 
 
+#### Build  for **production** (before change profile to production):
+```shell
+$ mvn clean install -DskipTests 
+#...
+#[INFO] BUILD SUCCESS
+#[INFO] ------------------------------------------------------------------------
+#[INFO] Total time:  7.911 s
+#[INFO] Finished at: 2023-12-02T13:39:35+03:00
+#...
+```
+
+#### Run application
+```shell
+$ java -jar .\target\Weather_API.jar
 ```
 
 
