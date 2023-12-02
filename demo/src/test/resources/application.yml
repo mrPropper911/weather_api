@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:latest:///test_DB
+    username: test
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: none
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+
+#https://openweathermap.org/
+openWeatherMapToken: ${WEATHER_OPENWEATHER_TOKEN}
+#Set weather update time
+scheduledDelayOnMillisecond: 60000
+
+apiUrl: http://localhost:8080/api/v1

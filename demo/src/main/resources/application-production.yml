@@ -1,0 +1,35 @@
+server:
+  port: 8088
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://${WEATHER_DATABASE_HOST}:${WEATHER_DATABASE_PORT}/${WEATHER_DATABASE_NAME}
+    username: ${WEATHER_DATABASE_USERNAME}
+    password: ${WEATHER_DATABASE_PASSWORD}
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      mode: never
+  flyway:
+    enabled: true
+    validate-on-migrate: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+  api-docs:
+    enabled: true
+
+#https://openweathermap.org/
+openWeatherMapToken: ${WEATHER_OPENWEATHER_TOKEN}
+#Set weather update time
+scheduledDelayOnMillisecond: 60000
+logging:
+  level:
+    root: error
+    sql: error

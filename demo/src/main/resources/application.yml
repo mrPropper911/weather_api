@@ -1,0 +1,6 @@
+#Here you need to select a profile for building app:
+#Uncomment the profile you want
+spring:
+  profiles:
+    active: develop
+#    active: production
